@@ -3,8 +3,16 @@ let addButton = $("#addButton")
 let taskInput = $("#taskInput")
 let listItem = $("#listItem")
 let checkbox = $("#checkbox")
+let completedList = $("#completedList")
+let pendingList = $("#pendingList")
+let completed = $("#compeleted")
 
 var taskNum = 0
+
+function boxChecked() {
+
+}
+
 
 function checkEmpty() {
 
@@ -15,6 +23,7 @@ function checkEmpty() {
     $('#completedTitle').show()
   }
 }
+
 checkEmpty()
 
 function addTask() {
@@ -23,13 +32,19 @@ function addTask() {
 
     let input = taskInput.val()
 
+    if(input.length <= 0) {
+      alert("Please Enter a Task!!")
+    } else {
+
     let list = $(`<li class="task" id="task_${taskNum}">
       <label for="complete_${taskNum}">Completed</label>
-      <input task_id="${taskNum}" id="complete_${taskNum}" type='checkbox' />
+      <input task_id="${taskNum}" id="complete_${taskNum}" type='checkbox'/>
       <label> ${input} </label>
       <button task_id="${taskNum}" id="remove_${taskNum}">Delete</button>
     </li>`)
     $("#listItem").append(list)
+
+    taskInput.val("")
 
     $(`#remove_${taskNum}`).click(function(e) {
 
@@ -46,20 +61,20 @@ function addTask() {
 
       let selectedTask = $(`#task_${taskId}`)
       selectedTask.attr('class', 'complete')
-      $("#completedList").prop('check', this.checked).append(selectedTask);
+      if(this.checked) {
+        $("#completedList").append(selectedTask)
+      } else {
+        $("#listItem").append(selectedTask)
+      }
 
       checkEmpty()
     })
 
 
-
-
     console.log(taskNum)
     taskNum = taskNum + 1
-
-  })
-
 }
-
+      })
+  }
 
 addTask()
