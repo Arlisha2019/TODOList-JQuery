@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+  background-color: #bdc3c7;
+
+}
+
+ ul {
+   list-style-type: none;
+
+ }
+ 
+#inputTask {
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+
+
+}
+
+@media (min-width: 480px) {
+
+
+
+}

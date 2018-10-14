@@ -4,14 +4,11 @@ let taskInput = $("#taskInput")
 let listItem = $("#listItem")
 let checkbox = $("#checkbox")
 let completedList = $("#completedList")
-let pendingList = $("#pendingList")
 let completed = $("#compeleted")
+let pendingList = $("#pendingList")
+
 
 var taskNum = 0
-
-function boxChecked() {
-
-}
 
 
 function checkEmpty() {
@@ -68,6 +65,7 @@ function addTask() {
       }
 
       checkEmpty()
+
     })
 
 
