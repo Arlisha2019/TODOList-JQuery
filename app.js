@@ -37,7 +37,7 @@ function addTask() {
       <label for="complete_${taskNum}">Completed</label>
       <input task_id="${taskNum}" id="complete_${taskNum}" type='checkbox'/>
       <label> ${input} </label>
-      <button task_id="${taskNum}" id="remove_${taskNum}">Delete</button>
+      <button task_id="${taskNum}" id="remove_${taskNum}" class="remove">Delete</button>
     </li>`)
     $("#listItem").append(list)
 
